@@ -1,7 +1,5 @@
 import React, { FC } from 'react'
 import PostComponent from './containers/Post'
-import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
 import { Header, Icon } from 'semantic-ui-react'
 
 const App: FC = () => (

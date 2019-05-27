@@ -1,10 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+import App from './App'
+import tweetReducer, { initialState } from './reducer'
+import * as serviceWorker from './serviceWorker'
+
+import './styles/index.css'
 import './styles/semantic.min.css'
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(tweetReducer, initialState)
 
-serviceWorker.unregister();
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+
+serviceWorker.unregister()

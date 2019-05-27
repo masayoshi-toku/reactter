@@ -1,18 +1,15 @@
+import { Tweet } from '../components/Post'
+
 export enum TweetActionType {
   POST = 'POST'
 }
 
-export interface Content {
-  id: number
-  text: string
-}
-
 export interface TweetAction {
-  content: Content
+  tweet: Tweet
   type: TweetActionType
 }
 
-export const post = (content: Content): TweetAction => ({
-  content,
+export const post = (tweet: Tweet): TweetAction => ({
+  tweet,
   type: TweetActionType.POST
 })

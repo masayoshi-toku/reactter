@@ -1,18 +1,29 @@
 import { Reducer } from 'redux'
-import { Content, TweetAction, TweetActionType } from './actions/post'
+import { Tweet } from './components/Post'
+import { TweetAction, TweetActionType } from './actions/post'
 
-export interface ContentsState {
-  contents: Content[]
+export interface TweetsState {
+  tweets: Tweet[]
 }
 
-const initialState: ContentsState = { contents: [] }
+export const initialState: TweetsState = { tweets: [] }
 
-const tweetReducer: Reducer<ContentsState, TweetAction> = (
-  state: ContentsState = initialState,
-  action: TweetAction
-): ContentsState => {
+const tweetReducer: Reducer<TweetsState, TweetAction> = (
+  state: TweetsState = initialState,
+  action: TweetAction,
+): TweetsState => {
   switch(action.type) {
     case TweetActionType.POST:
-      return state.push(action.content)
+      state.tweets.push(action.tweet)
+
+      return state
+    default: {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: never = action.type;
+
+      return state;
+    }
   }
 }
+
+export default tweetReducer
