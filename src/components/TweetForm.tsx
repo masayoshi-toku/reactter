@@ -6,11 +6,11 @@ export interface Tweet {
   text: string
 }
 
-interface PostProps {
+interface FormProps {
   post: (tweet: Tweet) => void
 }
 
-const Post: FC<PostProps> = ({
+const TweetForm: FC<FormProps> = ({
   post = () => {},
 }) => (
   <>
@@ -24,4 +24,4 @@ const Post: FC<PostProps> = ({
   </>
 )
 
-export default Post
+export default TweetForm
