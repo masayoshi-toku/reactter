@@ -3,7 +3,8 @@ import { Dispatch } from 'redux'
 
 import { post } from '../actions/post'
 import { TweetsState } from '../reducer'
-import TweetForm, { Tweet } from '../components/TweetForm'
+import TweetForm from '../components/TweetForm'
+import { Tweet } from '../components/TweetList'
 
 interface TweetProps {
   tweets: Tweet[]
