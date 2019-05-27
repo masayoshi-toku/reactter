@@ -1,4 +1,4 @@
-import { Tweet } from '../components/Post'
+import { Tweet } from '../components/TweetForm'
 
 export enum TweetActionType {
   POST = 'POST'

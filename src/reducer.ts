@@ -1,5 +1,5 @@
 import { Reducer } from 'redux'
-import { Tweet } from './components/Post'
+import { Tweet } from './components/TweetForm'
 import { TweetAction, TweetActionType } from './actions/post'
 
 export interface TweetsState {

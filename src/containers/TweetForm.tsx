@@ -3,7 +3,7 @@ import { Dispatch } from 'redux'
 
 import { post } from '../actions/post'
 import { TweetsState } from '../reducer'
-import Post, { Tweet } from '../components/Post'
+import TweetForm, { Tweet } from '../components/TweetForm'
 
 interface TweetProps {
   tweets: Tweet[]
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Post)
+)(TweetForm)
