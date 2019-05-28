@@ -1,0 +1,10 @@
+input[type='file'] {
+  display: none;
+}
+
+.upload-button-label {
+  border: 1px solid;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
