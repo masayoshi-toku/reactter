@@ -1,5 +1,5 @@
 import { Reducer } from 'redux'
-import { Tweet } from './components/TweetForm'
+import { Tweet } from './components/TweetList'
 import { TweetAction, TweetActionType } from './actions/post'
 
 export interface TweetsState {
@@ -14,14 +14,12 @@ const tweetReducer: Reducer<TweetsState, TweetAction> = (
 ): TweetsState => {
   switch(action.type) {
     case TweetActionType.POST:
-      state.tweets.push(action.tweet)
-
-      return state
+      return { tweets: [...state.tweets, action.tweet] }
     default: {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _: never = action.type;
+      const _: never = action.type
 
-      return state;
+      return { tweets: state.tweets }
     }
   }
 }
