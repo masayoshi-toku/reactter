@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import TweetForm from './containers/TweetForm'
+import TweetList from './containers/TweetList'
 import { Header, Icon } from 'semantic-ui-react'
+
 
 const App: FC = () => (
   <>
@@ -13,6 +15,7 @@ const App: FC = () => (
         Reactter
       </Header>
     </header>
+    <TweetList />
     <TweetForm />
   </>
 )

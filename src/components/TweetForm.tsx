@@ -1,10 +1,6 @@
 import React, { FC } from 'react'
 import { Button, Form } from 'semantic-ui-react'
-
-export interface Tweet {
-  id: number
-  text: string
-}
+import { Tweet } from './TweetList'
 
 interface FormProps {
   post: (tweet: Tweet) => void
