@@ -14,8 +14,8 @@ const TweetList: FC<TweetListProps> = ({ tweets = [] }) => (
   <>
     <Header as='h2'>投稿一覧</Header>
     <Item.Group>
-      {tweets.map(t => (
-        <Item>
+      {tweets.map((t, index) => (
+        <Item key={index}>
           <Icon name="user circle" size="huge" />
           <Item.Content>
             <Item.Header>テストユーザー</Item.Header>
