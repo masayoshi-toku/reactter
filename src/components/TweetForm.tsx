@@ -32,7 +32,7 @@ const TweetForm: FC<FormProps> = ({post = () => {}}) => {
           <img src={dataUrl} alt='preview' width="200"></img>
         </Form.Field>
         <Form.Field control='textarea' rows='3' label='テキスト' value={text} onChange={(e: ChangeEvent<HTMLInputElement>) => setText(e.currentTarget.value)} placeholder='いまなにしてる？' width={6} />
-        <Button type='submit' onClick={() => post({id: 1, text: text})}>投稿する</Button>
+        <Button type='submit' onClick={() => {post({ text, dataUrl });setText("");setDataUrl("")}}>投稿する</Button>
       </Form>
     </>
   )

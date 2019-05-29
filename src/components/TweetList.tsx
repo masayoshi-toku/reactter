@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
-import { Header, Item, Icon } from 'semantic-ui-react'
+import { Header, Item, Icon, Image } from 'semantic-ui-react'
 
 export interface Tweet {
-  id: number
   text: string
+  dataUrl: string
 }
 
 interface TweetListProps {
@@ -20,6 +20,9 @@ const TweetList: FC<TweetListProps> = ({ tweets = [] }) => (
           <Item.Content>
             <Item.Header>テストユーザー</Item.Header>
             <Item.Meta>{t.text}</Item.Meta>
+            <Item.Description>
+              <Image width='200' src={t.dataUrl} />
+            </Item.Description>
           </Item.Content>
         </Item>
       ))}
