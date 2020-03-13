@@ -26,6 +26,8 @@ jobs:
     - name: Wait for commit statuses
       id: waitforstatuschecks
       uses: WyriHaximus/github-action-wait-for-status@0.1.0
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
     - name: Get branch name
       uses: nelonoel/branch-name@v1
@@ -34,4 +36,5 @@ jobs:
       uses: github-actions-up-and-running/pr-comment@v1.0.0
       if: steps.waitforstatuschecks.outputs.status == 'success'
       with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
         myInput: https://hoge.${BRANCH_NAME}.com
