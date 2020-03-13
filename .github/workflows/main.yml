@@ -33,7 +33,7 @@ jobs:
       uses: nelonoel/branch-name@v1
 
     - run: echo ${BRANCH_NAME}
-    - run: echo steps.waitforstatuschecks.outputs.status
+    - run: echo ${steps.waitforstatuschecks.outputs.status}
 
     - name: PR Comment
       uses: github-actions-up-and-running/pr-comment@v1.0.0
