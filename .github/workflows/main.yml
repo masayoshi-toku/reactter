@@ -34,10 +34,10 @@ jobs:
     - name: Get branch name
       uses: nelonoel/branch-name@v1
 
-    - name: PR comment
-      uses: github-actions-up-and-running/pr-comment@v1.0.0
+    - name: Comment Pull Request
+      uses: thollander/actions-comment-pull-request@1.0.0
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        myInput: Nice PR!
-      env:
-        LABELS: comment
+        # Message that should be printed in the pull request
+        message: "Example!!!"
+        # Github token of the repository (automatically created by Github)
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
