@@ -32,9 +32,12 @@ jobs:
     - name: Get branch name
       uses: nelonoel/branch-name@v1
 
+    - run: echo ${BRANCH_NAME}
+    - run: echo steps.waitforstatuschecks.outputs.status
+
     - name: PR Comment
       uses: github-actions-up-and-running/pr-comment@v1.0.0
       if: steps.waitforstatuschecks.outputs.status == 'success'
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        myInput: https://hoge.${BRANCH_NAME}.com
+        message: Nice PR!👍
