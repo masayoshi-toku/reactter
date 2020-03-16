@@ -2,13 +2,14 @@
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
+# Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,7 +28,9 @@ jobs:
       id: waitforstatuschecks
       uses: WyriHaximus/github-action-wait-for-status@0.1.0
       with:
-        ignoreActions: Comment
+        ignoreActions: comment
+        checkInterval: 10
+
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -38,6 +41,7 @@ jobs:
       uses: thollander/actions-comment-pull-request@1.0.0
       with:
         # Message that should be printed in the pull request
-        message: "Example!!!"
+        message: 'BRANCH NAME: ${{ BRANCH_NAME }}'
         # Github token of the repository (automatically created by Github)
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        LABELS: comment
